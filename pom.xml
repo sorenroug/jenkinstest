@@ -73,7 +73,6 @@
                   <MYSQL_DATABASE>rod3</MYSQL_DATABASE>
                   <MYSQL_USER>roduser</MYSQL_USER>
                   <MYSQL_PASSWORD>password</MYSQL_PASSWORD>
-                  <HOST>${docker.host}</HOST>
                 </env>
                 <!--
                  <cmd>printenv</cmd>
@@ -84,7 +83,7 @@
                       <port>3306</port>
                     </ports>
                   </tcp>
-                  <time>20000</time>
+                  <time>120000</time>
                 </wait>
               </run>
             </image>
