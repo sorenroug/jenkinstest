@@ -43,6 +43,7 @@
                      -->
                 <wait>
                   <tcp>
+                    <mode>mapped</mode>
                     <ports>
                       <port>3306</port>
                     </ports>
