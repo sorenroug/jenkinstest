@@ -7,7 +7,7 @@
   <packaging>war</packaging>
   -->
   <properties>
-    <tomcat.port>4590</tomcat.port>
+    <database.port>4590</database.port>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java_version>1.8</java_version>
@@ -60,7 +60,10 @@
           <images>
             <image>
               <alias>database</alias>
+              <!--
               <name>busybox:latest</name>
+              -->
+              <name>mariadb:10.2.10</name>
               <run>
                 <ports>
                   <port>database.port:3306</port>
@@ -70,8 +73,11 @@
                   <MYSQL_DATABASE>rod3</MYSQL_DATABASE>
                   <MYSQL_USER>roduser</MYSQL_USER>
                   <MYSQL_PASSWORD>password</MYSQL_PASSWORD>
+                  <HOST>${docker.host}</HOST>
                 </env>
-                <cmd>ifconfig</cmd>
+                <!--
+                 <cmd>printenv</cmd>
+                     -->
                 <wait>
                   <tcp>
                     <ports>
